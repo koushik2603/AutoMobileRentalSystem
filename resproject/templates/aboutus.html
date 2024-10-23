@@ -1,0 +1,115 @@
+
+{% load static %}
+{% block body %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+  </style>
+<section class="section-6">
+  <div class="heading">
+    <h1>We !</h1>
+  </div>
+  <div class="row">
+    <figure class="figure">
+      <img src="static/images/Bha.jpg" height="393" width="285">
+      <figcaption>
+        <h3>Bhanu Nimmala</h3>
+        <p>2nd Year <br>CSE(H)<br>KL UNIVERSITY</p>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+    <figure class="figure">
+      <center><img src="static/images/me2.jpg" height="395" width="250"></center>
+      <figcaption>
+        <h3>Koushik Sarma</h3>
+        <p>2nd Year <br>CSE(H)<br>KL UNIVERSITY</p>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+    <figure class="figure">
+      <img src="static/images/abdul.jpg" height="395" width="280">
+      <figcaption>
+        <h3>Abdul Azeez</h3>
+        <p>2nd Year <br>CSE(H)<br>KL UNIVERSITY</p>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+     <figure class="figure">
+      <img src="static/images/jskfix.jpg" align="center">
+      <figcaption>
+        <h3>Surya Kiran Jonnalagadda</h3>
+        <p>Faculty Mentor<br>Associate Professor, CSE(H)<br>KL UNIVERSITY</p>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+  </div>
+</section>
+       </div>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</head>
+<body>
+
+<footer class="footer" style="background-color:black">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/">Home</a>
+
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,67 @@
+body {
+  color: #ffff;
+  padding: 50px;
+  background-size:cover;
+  background-color:black;
+}
+body h5{
+  font-family: 'Courier New', monospace;
+  font-style:italic;
+  font-size:25px;
+}
+
+body h2{
+  font-family:;
+  font-size:50px;
+
+}
+
+label
+{
+  display: inline-block;
+  font-weight: bold;
+  color:;
+  font-size:20px;
+  font-family:sans-serif;
+}
+input[type=text],input[type=password],input[type=email],textarea,select
+{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #4f3d7a;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+    padding:15px 20px;
+    background:#cbf57d;
+    font-family:sans-serif;
+    font-size:16px;
+    font-style:bold;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.parent {
+ border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 0px solid white;
+  padding: 1rem 4rem;
+  vertical-align: middle;
+}
+#img{
+    width:590px;
+    border:1px solid white;
+  }
+.addr {
+    font-size:20px;
+    font-family:
+  }

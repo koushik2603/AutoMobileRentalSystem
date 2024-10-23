@@ -1,0 +1,93 @@
+{% load static %}
+<html>
+<head>
+
+    <title>
+        {% block 'title' %}
+       Client Home
+        {% endblock %}
+    </title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<style>
+
+ {% block 'style' %}
+
+* {
+   box-sizing: border-box;
+}
+.imageColumn {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+        .navbar{
+            background-color: black;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+        {% endblock %}
+
+    </style>
+
+
+
+</head>
+<body>
+
+<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'clienthome' %}">Home</a></li>
+                <li><a href="{% url 'addvehicle' %}">Add Vehicles</a></li>
+                <li><a href="{% url 'viewallvehicles' %}">View Vehicles</a></li>
+                <li><a href="{% url 'contactus' %}">Contact Admin</a></li>
+                <li><a href="{% url 'clientlogout' %}">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+<br>
+<h1 align=center>Manage your Rental Services</h1>
+               <h3 align="right">Hi, {{cname}}</h3>
+
+
+
+
+
+</body>
+</html>

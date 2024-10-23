@@ -1,0 +1,218 @@
+
+{% load static %}
+
+<html>
+<head>
+
+     <title>
+        {% block 'title' %}
+        View Vehicles
+        {% endblock %}
+    </title>
+
+
+<style>
+
+ {% block 'style' %}
+ body {
+  background-image: url('addback.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+* {
+   box-sizing: border-box;
+}
+.imageColumn {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+        .navbar{
+            background-color: black;
+
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+table {
+  background-color: #f3eee8;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #ccc;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #f7f2eb;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5d5d5d;
+}
+/* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+    h3{
+  font-size: 40px;
+  font-weight: bold;
+  font-family:Sans-serif;
+}
+{% endblock %}
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+{% block 'body' %}
+
+<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'clienthome' %}">Home</a></li>
+                <li><a href="{% url 'viewallvehicles' %}">View Vehicles</a></li>
+                <li><a href="{% url 'contactus' %}">Contact Admin</a></li>
+                <li><a href="{% url 'clientlogout' %}">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+<h3 align="center">View All Vehicles</h3>
+
+<button><a href="{% url 'addvehicle' %}">Add Vehicle</a></button>
+
+Total Vehicles = {{count}}  <br><br>
+
+
+<table align="center" border="2">
+    <tr style="font-weight:bold">
+        <td>ID</td>
+        <td>Cateogry</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Image</td>
+    </tr>
+
+    {% for vehicle in vehiclelist %}
+    <tr>
+        <td>{{vehicle.id}}</td>
+        <td>{{vehicle.category}}</td>
+         <td>{{vehicle.name}}</td>
+         <td>{{vehicle.description}}</td>
+         <td>{{vehicle.price}}</td>
+         <td>
+             <img src="{{vehicle.image.url}}" width="50%" height="50%">
+         </td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+
+<br>
+<footer class="footer">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/about">About</a>
+        <a href="/loginhome">Login</a>
+        <a href="/reghome">Register</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

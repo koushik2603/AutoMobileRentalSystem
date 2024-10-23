@@ -1,0 +1,265 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha';
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 20px 20px;
+    }
+
+    /* CSS for main element */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://media.istockphoto.com/id/1419724017/photo/car-rental-agency-employee-giving-car-keys-to-beautiful-young-woman.jpg?b=1&s=170667a&w=0&k=20&c=CLa-ePWhLbLEBUEtRlPK3qhKsQ_tfPCoQgUJJM2P-jw=");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    .intro button {
+      background-color: #ffff;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+    }
+
+    .achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements .work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 80px;
+      border-top: 2px solid #eeeeee;
+    }
+
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .about-me-text p {
+      font-size: 18px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="/" class="logo">EasyLease</a>
+    <nav class="nav-items">
+      <a class="box" href="{% url 'loginhome' %}">Login</a>
+      <a class="box" href="{% url 'reghome' %}">Register</a>
+      <a class="box" href="{% url 'aboutus' %}">About</a>
+      <a class="box" href="{% url 'contactus' %}">Contact</a>
+      <a class="box" href="{% url 'subscribe' %}">Subscribe</a>
+    </nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>An Online Automobile Renting System</h1>
+      <p>We give vehicles for rent at effective prices</p>
+      <button><a class="box" href="https://www.linkedin.com/pulse/easylease-koushik-sarma/">Learn More</a></button>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-car"></i>
+        <p class="work-heading">Cars</p>
+        <p class="work-text">Our rental car is a vehicle that can be leased from us for a temporary period, typically ranging from a few hours to several weeks.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-motorcycle"></i>
+        <p class="work-heading">Motorcycles</p>
+        <p class="work-text">Our rental bike is a bicycle that is available for temporary use, typically for a few hours or days.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-truck"></i>
+        <p class="work-heading">Trucks & Movers</p>
+        <p class="work-text">Our Movers and trucks are commonly used together for the process of moving household or commercial goods from one location to another.</p>
+      </div>
+    </div>
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2>About Us</h2>
+        <p>Rental systems refer to the process by which goods or services are provided to customers for a temporary period of time in exchange for payment. These systems can be found in a variety of industries, including equipment rental, vehicle rental, and real estate rental. Overall, rental systems can provide customers with flexibility and convenience, as well as the opportunity to use goods or services that they may not be able to afford to purchase outright. However, rental systems can also be expensive in the long run, as customers may end up paying more for the rental than they would have if they had purchased the item outright. It is important for customers to carefully consider the cost and benefits of a rental system before entering into a rental agreement.</p>
+        <br>
+        <h2>Uses</h2>
+        <p><b>Leisure travel:</b> People can rent cars for vacation or weekend trips, allowing them to explore different destinations and have more flexibility in their travel plans.
+<br><br><b>Business travel: </b>Business travelers can rent cars for business trips, allowing them to have a reliable mode of transportation without the cost and hassle of owning a car.
+<br><br><b>Event transportation: </b>Rental systems can provide cars for special events such as weddings, proms, or parties, providing a convenient and stylish way to get around.</p>
+      </div>
+      <img src="https://www.enterprise.co.uk/content/dam/eu-brand/Intro%20image.jpg" alt="us">
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/about">About</a>
+        <a href="/loginhome">Login</a>
+        <a href="/reghome">Register</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

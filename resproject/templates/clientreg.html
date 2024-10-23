@@ -1,0 +1,200 @@
+{% load static %}
+
+<html>
+<head>
+
+     <title>
+        {% block 'title' %}
+        Client Registration
+        {% endblock %}
+    </title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/reg.css' %}">
+
+<style>
+
+
+ a{
+    color: #ffff
+    }
+
+        .navbar{
+            background-color: black;
+
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+        font-size:20px;
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+input[type=text],input[type=password],input[type=number],input[type=email],
+select,input[type=date]
+{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label
+{
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.logo
+{
+  position: relative;
+  float: left;
+  width: 100;
+  top:0
+}
+    [type="submit"] {
+        padding: 10px;
+        border: none;
+        background: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button input[type="submit"]:hover {
+        background: #3e8e41;
+       }
+     .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0000;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+</head>
+<body>
+
+<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                <li><a href="{% url 'loginhome' %}"> Login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+<h3 align="center"><mark>{{msg}}</mark></h3>
+
+<h3 align="Center" style="color:white"><font size="+3">Client Registration</font></h3>
+
+
+<form method="post">
+    {% csrf_token %}
+
+<table align=center>
+
+    {% for field in clientform %}
+
+<tr>
+<td><label>{{field.label}}</label></td>
+<td>{{field}}</td>
+</tr>
+
+    {% endfor %}
+
+<tr><td></td></tr>
+
+<tr align=center>
+<td colspan=2><input type="submit" value="Register" class="button"></td>
+</tr>
+
+</table>
+
+</form>
+
+<footer class="footer">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/about">About</a>
+        <a href="/loginhome">Login</a>
+        <a href="/reghome">Register</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

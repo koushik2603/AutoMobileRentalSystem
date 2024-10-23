@@ -1,0 +1,246 @@
+{% load static %}
+<html>
+<head>
+  <title>Registration Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+  a{
+    color: #ffff
+    }
+    .navbar{
+            background-color: white;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            font-size:20px;
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            align:center;
+        }
+        .navbar li a:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .navbar li a:hover{
+            color: red
+
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+    body {
+      background: linear-gradient(to bottom, #262626, #000000);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    button {
+      display: inline-block;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #555;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #777;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #333;
+      border-radius: 10px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    }
+
+    .box img {
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .box h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .box p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    a{
+    color: #ffff
+    }
+    .navbar{
+            background-color: white;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+/* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0000;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <marquee behavior="scroll" direction="left" scrollamount="20"><h1>How do you want to Register ?</h1></marquee>
+<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                <li><a href="{% url 'loginhome' %}"> Login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+  <div class="container">
+    <div class="box">
+      <img src="static/images/client.jpg" alt="Client">
+      <h2>Client</h2>
+      <button><a href="{% url 'clientregistration' %}">Register</a></button>
+    </div>
+    <div class="box">
+      <img src="static/images/renter.jpg" alt="Renter">
+      <h2>Renter</h2>
+      <button><a href="{% url 'signup3' %}">Register</a></button>
+    </div>
+  </div>
+<footer class="footer">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/about">About</a>
+        <a href="/loginhome">Login</a>
+        <a href="/reghome">Register</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

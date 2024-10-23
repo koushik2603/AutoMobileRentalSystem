@@ -1,0 +1,236 @@
+
+{% load static %}
+
+<html>
+<head>
+
+     <title>
+        {% block 'title' %}
+        Client Login
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+
+ {% block 'style' %}
+a{
+    color: #ffff
+    }
+    .navbar{
+            background-color: black;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            font-size:20px;
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+            align:center;
+        }
+        .navbar li a:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .navbar li a:hover{
+            color: red
+
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+body {
+  background: linear-gradient(to bottom right, #333333, #222222);
+}
+
+.login-form {
+  width: 400px;
+  margin: 0 auto;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-form input[type="submit"] {
+  background-color: #3e8e41;
+    width: 35%;
+    border: 3px solid ffff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+h2{
+  font-size: 50px;
+  font-weight: bold;
+  color:white;
+  font-family:Sans-serif;
+}
+h3{
+  font-size: 20px;
+  font-weight: bold;
+  color:red;
+  font-family:Sans-serif;
+}
+.button{
+background-color: #3e8e41;
+    width: 35%;
+    border: 3px solid ffff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+}
+/* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0000;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+{% endblock %}
+
+    </style>
+
+
+
+</head>
+
+<body>
+<h2 align="Center">Client Login</h2>
+<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                <li><a href="{% url 'reghome' %}"> Register</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+<div class="login-form">
+<form method="post" action="{% url 'checkclientlogin' %}">
+{% csrf_token %}
+
+<table align=center>
+
+<tr>
+<td><label for="username">Username</label></td>
+<td><input id="username" type="text" name="cusername" required="required"/></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label for="password">Password</label></td>
+<td><input id="password" type="password" name="cpassword" required="required"/></td>
+</tr>
+
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+<tr align=center>
+<td colspan=2><input type="submit" value="Login" class="button"></td>
+</tr>
+
+</table>
+
+</form>
+    <h3 align="center">{{msg}}</h3>
+    <center><a  class="button" href="{% url 'clientregistration' %}">Register</a></center>
+</div>
+<footer class="footer">
+    <div class="copy">&copy; 2022 EasyLease</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Quick Links</span>
+        <a href="/about">About</a>
+        <a href="/loginhome">Login</a>
+        <a href="/reghome">Register</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="https://www.linkedin.com/pulse/easylease-koushik-sarma/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/+918341364906"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtu.be/gzlD_YnNIig"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
